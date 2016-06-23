@@ -16,12 +16,14 @@ app.get('/', (req, res, next) => {
 
 io.on('connection', (socket) => {
 
+	socket.broadcast.emit('server-connection-established', 'A new user has entered...');
+
 	socket.on('client-message-send', (message) => {
 		io.emit('server-message-send', message);
 	});
 
 	socket.on('disconnect', () => {
-		console.log(`Client has disconnected...`);
+		io.emit('server-disconnection', 'Some has disconnected...');
 	});
 
 	socket.on('client-typing', (statusObj) => {

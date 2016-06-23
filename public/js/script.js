@@ -21,10 +21,10 @@ $(function() {
 		socket.emit('client-message-send', message);
 
 		messageInput.val('');
+		messageInput.blur();
 	});
 
 	socket.on('server-message-send', function(message) {
-		console.log(message);
 		var p = $('<p>');
 		p.addClass('message');
 		p.text(message);
@@ -48,6 +48,22 @@ $(function() {
 		} else if (statusObj.status === 'stop typing') {
 			typingStatus.text('');
 		}
+	});
+
+	socket.on('server-connection-established', function(message) {
+		var p = $('<p>');
+		p.addClass('message');
+		p.text(message);
+
+		messageContainer.append(p);
+	});
+
+	socket.on('server-disconnection', function(message) {
+		var p = $('<p>');
+		p.addClass('message');
+		p.text(message);
+
+		messageContainer.append(p);
 	});
 
 });
