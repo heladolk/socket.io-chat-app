@@ -1,0 +1,21 @@
+{
+  "name": "socket-io-chat-app",
+  "version": "1.0.0",
+  "description": "Socket.io Chat app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket",
+    "chat"
+  ],
+  "author": "Ian Jabour, Winnie Kwon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "pug": "^2.0.0-beta3",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6"
+  }
+}

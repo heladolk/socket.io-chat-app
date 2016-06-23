@@ -1,0 +1,19 @@
+html
+head
+	title Socket Chat
+	meta(charset='utf-8')
+	link(rel="stylesheet" href="/css/main.css")
+	script(src="https://cdn.socket.io/socket.io-1.2.0.js")
+	script(src="https://code.jquery.com/jquery-2.1.4.min.js")
+	script(src="/js/script.js")
+body
+	p Status:
+		span#status
+	h1 Socket Chat
+	div#grid
+		div#message-container
+			p.message Testing...
+	form#message-form
+		input(type='text' placeholder='Hey...')#message-input
+		button send message
+	p#typing-status
